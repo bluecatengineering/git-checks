@@ -1,0 +1,45 @@
+{
+  "name": "@bluecateng/git-checks",
+  "version": "0.1.1",
+  "description": "Validation commands for Git hooks",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bluecatengineering/git-checks.git"
+  },
+  "keywords": [
+    "git"
+  ],
+  "bin": {
+    "check-git-commits": "bin/check-git-commits.js",
+    "check-git-commits-story": "bin/check-git-commits-story.js",
+    "check-git-msg": "bin/check-git-msg.js",
+    "check-git-msg-story": "bin/check-git-msg-story.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
+    "prettier": "^1.17.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "bin/check-git-msg.js",
+      "pre-push": "bin/check-git-commits.js || exit 1"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js}": [
+        "eslint --fix --max-warnings 0",
+        "prettier --write",
+        "git add"
+      ],
+      "*.{md,yml}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  }
+}
