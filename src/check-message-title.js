@@ -5,7 +5,9 @@ const exceptions = ['Embed'];
 const checkVerb = verb => /(ed|ing)$/.test(verb) && !exceptions.includes(verb);
 
 module.exports = function(title, checkStory) {
-	if (title.length > 72) {
+	const length = title.length;
+
+	if (length > 72) {
 		return 'Message too long (maximum length: 72 chars)';
 	}
 
@@ -19,6 +21,10 @@ module.exports = function(title, checkStory) {
 		if (!r || checkVerb(r[1])) {
 			return 'Message format not valid, must be "Short summary" in present tense starting with capital letter';
 		}
+	}
+
+	if (title[length - 1] === '.') {
+		return 'Message format not valid, must not end with period';
 	}
 
 	return null;
