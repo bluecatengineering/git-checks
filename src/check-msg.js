@@ -8,7 +8,7 @@ module.exports = (fileName, checkStory) => {
 	const {stdout} = spawnSync('git', ['rev-parse', '--symbolic-full-name', '--abbrev-ref', 'HEAD'], {encoding: 'utf8'});
 	if (stdout === 'master\n') {
 		const content = readFileSync(fileName, {encoding: 'utf8'});
-		const lines = content.split('\n').filter(l => l[0] !== '#');
+		const lines = content.split('\n').filter((l) => l[0] !== '#');
 		const title = lines[0];
 		let error = checkMessageTitle(title, checkStory);
 		if (!error && lines.length > 1 && lines[1] !== '') {

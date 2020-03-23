@@ -2,9 +2,9 @@
 
 const exceptions = ['Embed'];
 
-const checkVerb = verb => /(ed|ing)$/.test(verb) && !exceptions.includes(verb);
+const checkVerb = (verb) => /(ed|ing)$/.test(verb) && !exceptions.includes(verb);
 
-module.exports = function(title, checkStory) {
+module.exports = function (title, checkStory) {
 	const length = title.length;
 
 	if (length > 72) {

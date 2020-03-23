@@ -13,7 +13,7 @@ const checkMerges = (range, localRef) => {
 const checkMessages = (range, localRef, checkStory) => {
 	const {stdout} = spawnSync('git', ['rev-list', '--pretty=oneline', range], {encoding: 'utf8'});
 	const errors = [];
-	stdout.split('\n').forEach(line => {
+	stdout.split('\n').forEach((line) => {
 		if (!line) return;
 		const r = /^(\S+) (.+)$/.exec(line);
 		const title = r[2];
@@ -36,7 +36,7 @@ const checkMessages = (range, localRef, checkStory) => {
 module.exports = (input, checkStory) => {
 	const errors = input
 		.split('\n')
-		.map(line => {
+		.map((line) => {
 			if (!line) return null;
 			const result = /(\S+) (\S+) (\S+) (\S+)/.exec(line);
 			const localRef = result[1],
@@ -49,7 +49,7 @@ module.exports = (input, checkStory) => {
 			}
 			return null;
 		})
-		.filter(e => e !== null);
+		.filter((e) => e !== null);
 
 	if (errors.length) {
 		process.stderr.write(errors.join('\n'), () => process.exit(1));
