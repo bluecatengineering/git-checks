@@ -1,4 +1,5 @@
 'use strict';
+const {readFileSync} = require('fs');
 const {spawnSync} = require('child_process');
 
 const checkMessageTitle = require('./check-message-title');
@@ -33,8 +34,8 @@ const checkMessages = (range, localRef, checkStory) => {
 	return null;
 };
 
-module.exports = (input, checkStory) => {
-	const errors = input
+module.exports = (checkStory) => {
+	const errors = readFileSync(0, 'utf8')
 		.split('\n')
 		.map((line) => {
 			if (!line) return null;
