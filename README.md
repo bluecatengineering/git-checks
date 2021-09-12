@@ -1,4 +1,4 @@
-# git-checks &middot; [![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/bluecatengineering/git-checks/blob/use-circleci/LICENSE) [![npm version](https://img.shields.io/npm/v/@bluecateng/git-checks.svg?style=flat)](https://www.npmjs.com/package/@bluecateng/git-checks)
+# git-checks &middot; [![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/bluecatengineering/git-checks/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/@bluecateng/git-checks.svg?style=flat)](https://www.npmjs.com/package/@bluecateng/git-checks)
 
 Scripts for use in Git hooks.
 
