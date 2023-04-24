@@ -23,7 +23,7 @@
     "@bluecateng/prettier-config": "^1.0.0",
     "eslint": "^8.11.0",
     "husky": "^7.0.2",
-    "lint-staged": "^12.3.7",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.4.0"
   },
   "prettier": "@bluecateng/prettier-config",
