@@ -8,7 +8,7 @@
     "url": "git@github.com:bluecatengineering/git-checks.git"
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "keywords": [
     "git"
@@ -21,10 +21,12 @@
   },
   "devDependencies": {
     "@bluecateng/prettier-config": "^1.0.0",
-    "eslint": "^8.11.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^12.3.7",
-    "prettier": "^2.4.0"
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.4.2"
   },
   "prettier": "@bluecateng/prettier-config",
   "lint-staged": {
