@@ -1,6 +1,6 @@
 {
   "name": "@bluecateng/git-checks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validation commands for Git hooks",
   "license": "ISC",
   "repository": {
@@ -8,6 +8,8 @@
     "url": "git@github.com:bluecatengineering/git-checks.git"
   },
   "scripts": {
+    "lint": "eslint",
+    "lint-ci": "eslint -f @microsoft/eslint-formatter-sarif -o build/eslint-results.sarif",
     "prepare": "husky"
   },
   "keywords": [
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@bluecateng/prettier-config": "^1.0.0",
     "@eslint/js": "^10.0.1",
+    "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "eslint": "^10.2.0",
     "globals": "^17.0.0",
     "husky": "^9.1.7",
